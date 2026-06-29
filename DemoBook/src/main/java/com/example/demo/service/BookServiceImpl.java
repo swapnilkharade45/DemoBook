@@ -26,4 +26,23 @@ public class BookServiceImpl implements BookService {
 		return br.findAll();
 	}
 
+	@Override
+	public void delete(int bookId) {
+		// TODO Auto-generated method stub
+		br.deleteById(bookId);
+	}
+
+	@Override
+	public Book update(int bookId, Book b) {
+		// TODO Auto-generated method stub
+		b.setBookId(bookId);
+		return br.save(b);
+	}
+
+	@Override
+	public void addAll(List<Book> b) {
+		// TODO Auto-generated method stub
+		br.saveAll(b);
+	}
+
 }
